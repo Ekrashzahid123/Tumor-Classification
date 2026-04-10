@@ -12,7 +12,7 @@ st.set_page_config(
 
 st.title("Brain Tumor MRI Classifier 🧠")
 st.markdown("Upload a brain MRI scan and get an AI-powered classification (MobileNetV2) into **Glioma**, **Meningioma**, **No Tumor**, or **Pituitary Tumor**.")
-st.markdown("**Made by Ekrash Zahid**")
+st.markdown("**developed by Ekrash Zahid**")
 
 # Use a cached function to load the model to speed up multiple requests
 @st.cache_resource
@@ -34,7 +34,7 @@ if uploaded_file is not None and predict_func is not None:
     bytes_data = uploaded_file.getvalue()
     
     # Display the uploaded image
-    st.image(bytes_data, caption="Uploaded MRI Scan", use_column_width=True)
+    st.image(bytes_data, caption="Uploaded MRI Scan", use_container_width=True)
     
     if st.button("Analyze MRI"):
         with st.spinner("Analyzing scan using AI..."):
